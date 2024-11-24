@@ -31,18 +31,14 @@ Download and install Android Studio.
 Make sure you have the latest version with all required SDKs and tools installed.
 ```
 2. Clone the Repository
+- Open Android Studio.
+- Navigate to File > New > Get from Version Control.
+- Paste the repository URL into the URL field:
 
 ```
-Open Android Studio.
-Navigate to File > New > Get from Version Control.
-Paste the repository URL into the URL field: https://github.com/kreasi-capstone-project/kreasi-app.git
+https://github.com/kreasi-capstone-project/kreasi-app.git
 ```
 3. Wait for Gradle Sync
-
-```
-Once the project is loaded, Android Studio will automatically sync the Gradle files.
-If prompted, install any missing SDK components or dependencies.
-```
+- Once the project is loaded, Android Studio will automatically sync the Gradle files.
+- If prompted, install any missing SDK components or dependencies.
 4. Run the Application
-
-```
