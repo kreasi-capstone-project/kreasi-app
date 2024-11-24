@@ -25,11 +25,8 @@ KREASI is an organization dedicated to empowering individuals through innovative
 
 ## Setup Instructions
 1. Install Android Studio (If not installed)
-
-```
-Download and install Android Studio.
-Make sure you have the latest version with all required SDKs and tools installed.
-```
+- Download and install Android Studio.
+- Make sure you have the latest version with all required SDKs and tools installed.
 2. Clone the Repository
 - Open Android Studio.
 - Navigate to File > New > Get from Version Control.
