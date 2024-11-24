@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Kreasi" parent="Theme.MaterialComponents.DayNight">
+        <!-- Primary brand color. -->
+        <item name="android:windowBackground">@color/romance</item>
+        <item name="colorPrimary">@color/dark_sky_blue</item>
+        <item name="android:textColorPrimary">@color/romance</item>
+        <item name="colorPrimaryVariant">@color/dark_sky_blue</item>
+        <item name="colorOnPrimary">@color/romance_translucent</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/black</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:padding">0dp</item>
+    </style>
+</resources>

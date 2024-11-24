@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="romance">#FFFFFB</color>
+    <color name="romance_translucent">#CCFFFFFB</color>
+    <color name="dark_sky_blue">#4A90E2</color>
+    <color name="black_80_opacity">#CC000000</color>
+    <color name="black_50_opacity">#80000000</color>
+    <color name="black_10_opacity">#1A000000</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
