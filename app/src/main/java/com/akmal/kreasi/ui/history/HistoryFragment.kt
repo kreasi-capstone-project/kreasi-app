@@ -5,18 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.akmal.kreasi.History
 import com.akmal.kreasi.HistoryAdapter
-import com.akmal.kreasi.LearningPath
-import com.akmal.kreasi.LearningPathAdapter
 import com.akmal.kreasi.R
 import com.akmal.kreasi.databinding.FragmentHistoryBinding
-import com.akmal.kreasi.ui.StudyPathDetail
-import com.akmal.kreasi.ui.TestResult
+import com.akmal.kreasi.ui.result.TestResult
 
 class HistoryFragment : Fragment() {
 

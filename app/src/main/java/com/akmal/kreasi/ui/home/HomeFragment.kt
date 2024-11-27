@@ -5,10 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toolbar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,7 +12,7 @@ import com.akmal.kreasi.LearningPath
 import com.akmal.kreasi.LearningPathAdapter
 import com.akmal.kreasi.R
 import com.akmal.kreasi.databinding.FragmentHomeBinding
-import com.akmal.kreasi.ui.StudyPathDetail
+import com.akmal.kreasi.ui.studydetail.StudyPathDetail
 
 class HomeFragment : Fragment() {
 

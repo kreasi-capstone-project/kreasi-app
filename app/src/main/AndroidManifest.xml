@@ -13,13 +13,13 @@
         android:theme="@style/Theme.Kreasi"
         tools:targetApi="31">
         <activity
-            android:name=".ui.TestResult"
+            android:name=".ui.result.TestResult"
             android:exported="false" />
         <activity
-            android:name=".ui.StudyPathDetail"
+            android:name=".ui.studydetail.StudyPathDetail"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>

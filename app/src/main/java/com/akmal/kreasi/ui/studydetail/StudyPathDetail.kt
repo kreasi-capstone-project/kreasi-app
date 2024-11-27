@@ -1,9 +1,6 @@
-package com.akmal.kreasi.ui
+package com.akmal.kreasi.ui.studydetail
 
-import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.view.WindowInsetsController
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
