@@ -1,17 +1,16 @@
-package com.akmal.kreasi.ui.profile
+package com.akmal.kreasi.ui.setting
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.akmal.kreasi.databinding.FragmentProfileBinding
+import com.akmal.kreasi.databinding.FragmentSettingBinding
 
-class ProfileFragment : Fragment() {
+class SettingFragment : Fragment() {
 
-    private var _binding: FragmentProfileBinding? = null
+    private var _binding: FragmentSettingBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,10 +21,10 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val profileViewModel =
-            ViewModelProvider(this).get(ProfileViewModel::class.java)
+        val settingViewModel =
+            ViewModelProvider(this).get(SettingViewModel::class.java)
 
-        _binding = FragmentProfileBinding.inflate(inflater, container, false)
+        _binding = FragmentSettingBinding.inflate(inflater, container, false)
         val root: View = binding.root
 //
 //        val textView: TextView = binding.textNotifications

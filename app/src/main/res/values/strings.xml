@@ -2,7 +2,7 @@
     <string name="app_name">Kreasi</string>
     <string name="title_home">Home</string>
     <string name="title_history">History</string>
-    <string name="title_profile">Profile</string>
+    <string name="title_setting">Setting</string>
     <string name="title_learning_path">Machine Learning</string>
     <string name="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry</string>
     <string name="date">2024-12-12</string>
