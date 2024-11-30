@@ -6,6 +6,13 @@
     <string name="title_learning_path">Machine Learning</string>
     <string name="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry</string>
     <string name="date">2024-12-12</string>
+    <string name="log_out">Log out</string>
+    <string name="action">Action</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="option">Option</string>
+    <string name="text_email">namaemail123@gmail.com</string>
+    <string name="text_name">coba nama</string>
+    <string name="profile_picture">Profile Picture</string>
 
     <string-array name="data_name">
         <item>Machine Learning Engineer</item>
