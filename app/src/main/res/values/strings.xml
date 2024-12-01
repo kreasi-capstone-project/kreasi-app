@@ -100,5 +100,17 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="title_login_page">Welcome to KREASI</string>
+    <string name="message_login_page">Login in your Account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="teks_register">Don\'t have an account?</string>
+    <string name="actiontoregister">" Register Now!"</string>
+    <string name="name">Name</string>
+    <string name="message_register_page">Create your Account</string>
+    <string name="register">Register</string>
+    <string name="teks_login">Already have an account?</string>
+    <string name="actiontologin">" Login Now!"</string>
 
 </resources>
