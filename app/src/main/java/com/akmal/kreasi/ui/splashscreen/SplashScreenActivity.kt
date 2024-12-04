@@ -7,12 +7,9 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowInsets
 import android.view.WindowManager
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.akmal.kreasi.R
-import com.akmal.kreasi.ui.login.LoginActivity
+import com.akmal.kreasi.ui.main.MainActivity
 
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +23,7 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun goToMainActivity() {
-        Intent(this, LoginActivity::class.java).also {
+        Intent(this, MainActivity::class.java).also {
             startActivity(it)
             finish()
         }

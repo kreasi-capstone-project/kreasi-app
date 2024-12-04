@@ -112,5 +112,20 @@
     <string name="register">Register</string>
     <string name="teks_login">Already have an account?</string>
     <string name="actiontologin">" Login Now!"</string>
+    <string name="log_out_title">Log Out</string>
+    <string name="Log_out_message">Are you sure you want to log out of the application?</string>
+    <string name="cancel_text">Cancel</string>
+    <string name="message_error_password">Password must be at least 8 characters</string>
+    <string name="continue_text">Continue</string>
+    <string name="try_again">Try Again</string>
+    <string name="title_login_success">Login Success</string>
+    <string name="message_login_success">You have successfully logged in</string>
+    <string name="error_message">There is an error</string>
+    <string name="title_login_failed">Login Failed</string>
+    <string name="account_created">Account Created</string>
+    <string name="message_created_account">Your account has been successfully created.</string>
+    <string name="register_failed">Register Failed</string>
+    <string name="email_blank_message">Email Cannot Be Blank</string>
+    <string name="email_format_message">Incorrect email format</string>
 
 </resources>
