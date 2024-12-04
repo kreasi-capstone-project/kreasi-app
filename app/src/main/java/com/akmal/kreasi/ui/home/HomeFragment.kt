@@ -6,20 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.akmal.kreasi.LearningPath
 import com.akmal.kreasi.LearningPathAdapter
 import com.akmal.kreasi.R
+import com.akmal.kreasi.ViewModelFactory
 import com.akmal.kreasi.databinding.FragmentHomeBinding
+import com.akmal.kreasi.ui.login.LoginActivity
 import com.akmal.kreasi.ui.studydetail.StudyPathDetail
 
 class HomeFragment : Fragment() {
+    private val viewModel by viewModels<HomeViewModel> {
+        ViewModelFactory.getInstance(requireContext())
+    }
 
     private var _binding: FragmentHomeBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
     private val list = ArrayList<LearningPath>()
 
@@ -29,22 +32,21 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-//        val textView: TextView = binding.textHome
-//        homeViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.getSession().observe(viewLifecycleOwner) { user ->
+            if (!user.isLogin) {
+                startActivity(Intent(requireContext(), LoginActivity::class.java))
+                requireActivity().finish()
+            }
+        }
         binding.rvLearningPath.setHasFixedSize(true)
         list.addAll(getListLearningPath())
         showRecyclerList()
