@@ -7,6 +7,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
+import com.akmal.kreasi.R
 
 
 class MyEditText @JvmOverloads constructor(
@@ -20,7 +21,7 @@ class MyEditText @JvmOverloads constructor(
             }
             override fun onTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
                 if (s.toString().length < 8) {
-                    setError("Password tidak boleh kurang dari 8 karakter", null)
+                    setError(context.getString(R.string.message_error_password), null)
                 } else {
                     error = null
                 }
@@ -28,7 +29,7 @@ class MyEditText @JvmOverloads constructor(
 
             override fun afterTextChanged(s: Editable?) {
                 if (s.toString().length < 8) {
-                    setError("Password tidak boleh kurang dari 8 karakter", null)
+                    setError(context.getString(R.string.message_error_password), null)
                 } else {
                     error = null
                 }

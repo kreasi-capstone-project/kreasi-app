@@ -8,6 +8,7 @@ import android.util.Patterns
 import android.view.MotionEvent
 import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
+import com.akmal.kreasi.R
 
 class MyEmailEditText @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null
@@ -31,9 +32,9 @@ class MyEmailEditText @JvmOverloads constructor(
 
     private fun validateEmail(input: String) {
         if (input.isEmpty()) {
-            setError("Email Tidak Boleh Kosong", null)
+            setError(context.getString(R.string.email_blank_message), null)
         } else if (!Patterns.EMAIL_ADDRESS.matcher(input).matches()) {
-            setError("Format email salah", null)
+            setError(context.getString(R.string.email_format_message), null)
         } else {
             error = null
         }
