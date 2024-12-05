@@ -36,6 +36,13 @@ class SettingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.getSession().observe(viewLifecycleOwner) {user ->
+            if (user != null && user.isLogin) {
+                binding.tvProfileName.text = user.name
+                binding.tvProfileEmail.text = user.email
+            }
+        }
+
         binding.tvLogout.setOnClickListener {
             AlertDialog.Builder(context, R.style.MyAlertDialogTheme).apply {
                 setTitle(getString(R.string.log_out_title))

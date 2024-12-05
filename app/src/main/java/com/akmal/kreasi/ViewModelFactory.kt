@@ -23,7 +23,7 @@ class ViewModelFactory(private val repository: UserRepository, private val apiSe
                 LoginViewModel(apiService, repository) as T
             }
             modelClass.isAssignableFrom(RegisterViewModel::class.java) -> {
-                RegisterViewModel(apiService, repository) as T
+                RegisterViewModel(apiService) as T
             }
             modelClass.isAssignableFrom(SettingViewModel::class.java) -> {
                 SettingViewModel(repository) as T
