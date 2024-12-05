@@ -26,6 +26,8 @@ class LoginViewModel(private val apiService: ApiService, private val repository:
                     if (responseBody != null && responseBody.status == "success" && responseBody.data != null) {
                         val token = responseBody.data.token
                         val user = UserModel(
+                            id = responseBody.data.users.id,
+                            name = responseBody.data.users.name,
                             email = responseBody.data.users.email,
                             token = token,
                             isLogin = true

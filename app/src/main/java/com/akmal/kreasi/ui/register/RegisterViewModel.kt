@@ -12,7 +12,7 @@ import com.akmal.kreasi.data.retrofit.ApiService
 import com.akmal.kreasi.helper.ApiErrorHandler
 import kotlinx.coroutines.launch
 
-class RegisterViewModel(private val apiService: ApiService, private val repository: UserRepository): ViewModel() {
+class RegisterViewModel(private val apiService: ApiService): ViewModel() {
     private val _registerResult = MutableLiveData<Result<String>>()
     val registerResult: LiveData<Result<String>> = _registerResult
 
@@ -24,9 +24,6 @@ class RegisterViewModel(private val apiService: ApiService, private val reposito
                         val responseBody = response.body()
                         Log.d("check response", "response $responseBody")
                         if (responseBody?.status == "success") {
-                            val token = responseBody.data.token
-                            val userEmail = responseBody.data.users.email
-                            repository.saveSession(UserModel(userEmail, token, isLogin = true))
                             _registerResult.postValue(Result.success("Account successfully created!"))
                         } else {
                             val errorMessage = responseBody?.status ?: "Unknown error"
