@@ -1,11 +1,14 @@
 package com.akmal.kreasi.data.retrofit
 
+import com.akmal.kreasi.data.response.LearningPathResponse
 import com.akmal.kreasi.data.response.LoginRequest
 import com.akmal.kreasi.data.response.LoginResponse
 import com.akmal.kreasi.data.response.RegisterRequest
 import com.akmal.kreasi.data.response.RegisterResponse
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface ApiService {
@@ -18,4 +21,9 @@ interface ApiService {
     suspend fun login(
         @Body request: LoginRequest
     ): Response<LoginResponse>
+
+    @GET("api/subjects")
+    suspend fun getAllLearningPath(
+        @Header("Authorization") token: String,
+    ): Response<LearningPathResponse>
 }

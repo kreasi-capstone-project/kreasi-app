@@ -3,21 +3,26 @@ package com.akmal.kreasi
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.ImageView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.akmal.kreasi.data.response.Subject
 import com.akmal.kreasi.databinding.ItemRowLearningBinding
 
-class LearningPathAdapter(private val listLearning: ArrayList<LearningPath>): RecyclerView.Adapter<LearningPathAdapter.ListViewHolder>() {
-    private lateinit var onItemClickCallback: OnItemClickCallback
+class LearningPathAdapter(private val listener: OnItemClickListener): androidx.recyclerview.widget.ListAdapter<Subject, LearningPathAdapter.ListViewHolder>(DIFF_CALLBACK) {
 
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback
-    }
     class ListViewHolder(private val binding: ItemRowLearningBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(learningPath: LearningPath) {
+        fun bind(learningPath: Subject) {
             binding.tvItemName.text = learningPath.name
             binding.tvItemDescription.text = learningPath.description
-            binding.imgItemPhoto.setImageResource(learningPath.photo)
+
+            val imgResource = when (learningPath.name) {
+                "Cybersecurity" -> R.drawable.artificial_intelligence
+                "Data Analytics" -> R.drawable.python
+                else -> R.drawable.atom
+            }
+            binding.imgItemPhoto.setImageResource(imgResource)
         }
     }
 
@@ -26,17 +31,27 @@ class LearningPathAdapter(private val listLearning: ArrayList<LearningPath>): Re
         return ListViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = listLearning.size
-
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val learningPath = listLearning[position]
+        val learningPath = getItem(position)
         holder.bind(learningPath)
         holder.itemView.setOnClickListener {
-            onItemClickCallback.onItemClicked(listLearning[holder.adapterPosition])
+            listener.onItemClick(learningPath)
         }
     }
 
-    interface OnItemClickCallback {
-        fun onItemClicked(data: LearningPath)
+    companion object {
+        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Subject>() {
+            override fun areItemsTheSame(oldItem: Subject, newItem: Subject): Boolean {
+                return oldItem.name == newItem.name
+            }
+
+            override fun areContentsTheSame(oldItem: Subject, newItem: Subject): Boolean {
+                return oldItem == newItem
+            }
+        }
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(data: Subject)
     }
 }
