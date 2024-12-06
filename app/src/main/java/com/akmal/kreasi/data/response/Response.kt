@@ -73,6 +73,28 @@ data class UserData(
     val name: String
 )
 
+data class LearningPathResponse(
+    @field:SerializedName("status")
+    val status: String,
+
+    @field:SerializedName("data")
+    val data: Subjects
+)
+
+data class Subjects(
+    @field:SerializedName("subjects")
+    val subjects: List<Subject>
+)
+
+data class Subject(
+    @field:SerializedName("name")
+    val name: String,
+
+    @field:SerializedName("description")
+    val description: String
+)
+
+
 data class ApiErrorResponse(
     @field:SerializedName("status")
     val status: String,
