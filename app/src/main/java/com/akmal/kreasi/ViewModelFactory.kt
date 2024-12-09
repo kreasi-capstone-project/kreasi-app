@@ -10,6 +10,7 @@ import com.akmal.kreasi.ui.home.HomeViewModel
 import com.akmal.kreasi.ui.login.LoginViewModel
 import com.akmal.kreasi.ui.register.RegisterViewModel
 import com.akmal.kreasi.ui.setting.SettingViewModel
+import com.akmal.kreasi.ui.studydetail.StudyPathViewModel
 
 class ViewModelFactory(private val repository: UserRepository, private val apiService: ApiService) : ViewModelProvider.NewInstanceFactory() {
 
@@ -28,9 +29,9 @@ class ViewModelFactory(private val repository: UserRepository, private val apiSe
             modelClass.isAssignableFrom(SettingViewModel::class.java) -> {
                 SettingViewModel(repository) as T
             }
-//            modelClass.isAssignableFrom(DetailStoryViewModel::class.java) -> {
-//                DetailStoryViewModel(repository, apiService) as T
-//            }
+            modelClass.isAssignableFrom(StudyPathViewModel::class.java) -> {
+                StudyPathViewModel(repository, apiService) as T
+            }
 //            modelClass.isAssignableFrom(AddStoryViewModel::class.java) -> {
 //                AddStoryViewModel(apiService, repository) as T
 //            }
