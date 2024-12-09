@@ -87,11 +87,27 @@ data class Subjects(
 )
 
 data class Subject(
+    @field:SerializedName("id")
+    val id: Int? = null,
+
     @field:SerializedName("name")
     val name: String,
 
     @field:SerializedName("description")
     val description: String
+)
+
+data class LearningPathDetailResponse(
+    @field:SerializedName("status")
+    val status: String,
+
+    @field:SerializedName("data")
+    val data: SubjectWrapper
+)
+
+data class SubjectWrapper(
+    @field:SerializedName("subjects")
+    val data: Subject
 )
 
 

@@ -1,5 +1,6 @@
 package com.akmal.kreasi.data.retrofit
 
+import com.akmal.kreasi.data.response.LearningPathDetailResponse
 import com.akmal.kreasi.data.response.LearningPathResponse
 import com.akmal.kreasi.data.response.LoginRequest
 import com.akmal.kreasi.data.response.LoginResponse
@@ -10,6 +11,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface ApiService {
     @POST("api/register")
@@ -26,4 +28,10 @@ interface ApiService {
     suspend fun getAllLearningPath(
         @Header("Authorization") token: String,
     ): Response<LearningPathResponse>
+
+    @GET("api/subjects/{id}")
+    suspend fun getLearningPathDetail(
+        @Header("Authorization") token: String,
+        @Path("id") id: Int
+    ): Response<LearningPathDetailResponse>
 }
