@@ -66,7 +66,10 @@ class StudyPathDetail : AppCompatActivity() {
         }
 
         binding?.btnTakeTest?.setOnClickListener {
-            startActivity(Intent(this, AssessmentActivity::class.java))
+            val intent = Intent(this, AssessmentActivity::class.java)
+            intent.putExtra("LEARNING_ID", studyId)
+            startActivity(intent)
+//            startActivity(Intent(this, AssessmentActivity::class.java))
         }
     }
 
