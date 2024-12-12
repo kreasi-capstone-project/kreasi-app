@@ -15,9 +15,16 @@ class LearningPathAdapter(private val listener: OnItemClickListener): androidx.r
             binding.tvItemDescription.text = learningPath.description
 
             val imgResource = when (learningPath.name) {
-                "Cybersecurity" -> R.drawable.artificial_intelligence
-                "Data Analytics" -> R.drawable.python
-                else -> R.drawable.atom
+                "Leadership and Management" -> R.drawable.leadership_management
+                "Strategy" -> R.drawable.strategy
+                "Strategy and Operations" -> R.drawable.strategy_operation
+                "Critical Thinking" -> R.drawable.critical_thinking
+                "Communication" -> R.drawable.communication
+                "Business Analysis" -> R.drawable.bussiness_analysis
+                "Data Analysis" -> R.drawable.data_analysis
+                "Problem Solving" -> R.drawable.problem_solving
+                "Decision Making" -> R.drawable.decision_making
+                else -> R.drawable.no_pictures
             }
             binding.imgItemPhoto.setImageResource(imgResource)
         }

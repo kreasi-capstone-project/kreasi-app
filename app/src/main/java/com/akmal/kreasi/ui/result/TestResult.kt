@@ -14,11 +14,10 @@ class TestResult : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTestResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.title = "Recommendation Learning"
 
-        // Load data from res/values/strings.xml
         val data = loadExpandableListData()
 
-        // Setup ExpandableListView
         setupExpandableListView(data)
     }
 
@@ -27,14 +26,28 @@ class TestResult : AppCompatActivity() {
 
         // Get categories and items from strings.xml
         val categories = resources.getStringArray(R.array.header_data)
-        val cricketTeams = resources.getStringArray(R.array.child_data_0).toList()
-        val footballTeams = resources.getStringArray(R.array.child_data_1).toList()
-        val basketballTeams = resources.getStringArray(R.array.child_data_2).toList()
+        val data1 = resources.getStringArray(R.array.child_data_0).toList()
+        val data2 = resources.getStringArray(R.array.child_data_1).toList()
+        val data3 = resources.getStringArray(R.array.child_data_2).toList()
+        val data4 = resources.getStringArray(R.array.child_data_4).toList()
+        val data5 = resources.getStringArray(R.array.child_data_5).toList()
+        val data6 = resources.getStringArray(R.array.child_data_6).toList()
+        val data7 = resources.getStringArray(R.array.child_data_7).toList()
+        val data8 = resources.getStringArray(R.array.child_data_8).toList()
+        val data9 = resources.getStringArray(R.array.child_data_9).toList()
+        val data10 = resources.getStringArray(R.array.child_data_10).toList()
 
         // Map data to HashMap
-        data[categories[0]] = cricketTeams
-        data[categories[1]] = footballTeams
-        data[categories[2]] = basketballTeams
+        data[categories[0]] = data1
+        data[categories[1]] = data2
+        data[categories[2]] = data3
+        data[categories[3]] = data4
+        data[categories[4]] = data5
+        data[categories[5]] = data6
+        data[categories[6]] = data7
+        data[categories[7]] = data8
+        data[categories[8]] = data9
+        data[categories[9]] = data10
 
         return data
     }

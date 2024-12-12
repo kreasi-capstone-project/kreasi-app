@@ -1,5 +1,6 @@
 package com.akmal.kreasi.data.retrofit
 
+import com.akmal.kreasi.data.response.AssessmentTest
 import com.akmal.kreasi.data.response.LearningPathDetailResponse
 import com.akmal.kreasi.data.response.LearningPathResponse
 import com.akmal.kreasi.data.response.LoginRequest
@@ -34,4 +35,10 @@ interface ApiService {
         @Header("Authorization") token: String,
         @Path("id") id: Int
     ): Response<LearningPathDetailResponse>
+
+    @GET("api/subjects/{id}/assessments")
+    suspend fun getAssessmentTest(
+        @Header("Authorization") token: String,
+        @Path("id") id: Int
+    ): Response<AssessmentTest>
 }

@@ -88,13 +88,13 @@ data class Subjects(
 
 data class Subject(
     @field:SerializedName("id")
-    val id: Int? = null,
+    val id: Int?,
 
     @field:SerializedName("name")
     val name: String,
 
     @field:SerializedName("description")
-    val description: String
+    val description: String? = null
 )
 
 data class LearningPathDetailResponse(
@@ -108,6 +108,31 @@ data class LearningPathDetailResponse(
 data class SubjectWrapper(
     @field:SerializedName("subjects")
     val data: Subject
+)
+
+
+data class AssessmentTest(
+    @field:SerializedName("status")
+    val status: String,
+
+    @field:SerializedName("data")
+    val data: AssessmentData
+)
+
+data class AssessmentData(
+    @field:SerializedName("subjects")
+    val subjects: Subject,
+
+    @field:SerializedName("assesments")
+    val assessments: Map<String, AssessmentDetail>
+)
+
+data class AssessmentDetail(
+    @field:SerializedName("answers")
+    val answers: List<String>,
+
+    @field:SerializedName("correct_answers")
+    val correctAnswers: String
 )
 
 
