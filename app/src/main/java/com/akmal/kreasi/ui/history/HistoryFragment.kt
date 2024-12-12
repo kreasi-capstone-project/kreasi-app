@@ -18,8 +18,6 @@ class HistoryFragment : Fragment() {
 
     private var _binding: FragmentHistoryBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
     private val list = ArrayList<History>()
 
@@ -35,11 +33,6 @@ class HistoryFragment : Fragment() {
         val root: View = binding.root
 
 
-
-//        val textView: TextView = binding.textDashboard
-//        historyViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
         return root
     }
 

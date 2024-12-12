@@ -3,9 +3,9 @@
     <string name="title_home">Home</string>
     <string name="title_history">History</string>
     <string name="title_setting">Setting</string>
-    <string name="title_learning_path">Machine Learning</string>
+    <string name="title_learning_path">Data Analysis</string>
     <string name="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry</string>
-    <string name="date">2024-12-12</string>
+    <string name="date">2024-12-13</string>
     <string name="log_out">Log out</string>
     <string name="action">Action</string>
     <string name="dark_mode">Dark Mode</string>
@@ -54,35 +54,166 @@
 
 
     <string-array name="header_data">
-        <item>Pemahaman Dasar Pemrograman dan Matematika</item>
-        <item>Data Handling dan Eksplorasi</item>
-        <item>Pemahaman Dasar Machine Learning</item>
-        <item>Deep Learning</item>
-        <item>Specialization</item>
+        <item>Get Started with Python</item>
+        <item>Go Beyond the Numbers: Translate Data into Insights</item>
+        <item>Machine Learning Data Lifecycle in Production</item>
+        <item>Analyze Datasets and Train ML Models using AutoML</item>
+        <item>Practical Data Science on the AWS Cloud</item>
+        <item>Machine Learning Engineering for Production (MLOps)</item>
+        <item>Google Advanced Data Analytics</item>
+        <item>Foundations of Data Science</item>
+        <item>Advanced Data Science with IBM</item>
+        <item>Advanced Valuation and Strategy - M&amp;A, Private Equity, and Venture Capital</item>
+        <item>Data Warehousing for Business Intelligence</item>
     </string-array>
 
     <!-- Child data -->
     <string-array name="child_data_0">
-        <item>Pemrograman Dasar (Python, R)</item>
-        <item>Matematika (Linear Algebra, Kalkulus, Statistik dan Probabilitas)</item>
+        <item>Computer Programming</item>
+        <item>Data Analysis</item>
+        <item>Python Programming</item>
     </string-array>
+
     <string-array name="child_data_1">
-        <item>Data Cleaning</item>
+        <item>Data Analysis</item>
+        <item>Exploratory Data Analysis</item>
+        <item>Python Programming</item>
+        <item>Tableau Software</item>
+    </string-array>
+
+    <string-array name="child_data_2">
+        <item>Python Programming</item>
+        <item>Statistical Programming</item>
+        <item>Tensorflow</item>
+        <item>Exploratory Data Analysis</item>
+        <item>Feature Engineering</item>
+        <item>Machine Learning</item>
+        <item>Probability &amp; Statistics</item>
+    </string-array>
+
+    <string-array name="child_data_3">
+        <item>Amazon Web Services</item>
         <item>Exploratory Data Analysis</item>
     </string-array>
-    <string-array name="child_data_2">
-        <item>Supervised Learning</item>
-        <item>Unsupervised Learning</item>
-    </string-array>
-    <string-array name="child_data_3">
-        <item>Neural Networks</item>
-        <item>Convolutional Networks</item>
-    </string-array>
+
     <string-array name="child_data_4">
-        <item>NLP</item>
-        <item>Computer Vision</item>
-        <item>Reinforcement Learning</item>
+        <item>Amazon Web Services</item>
+        <item>Exploratory Data Analysis</item>
     </string-array>
+
+    <string-array name="child_data_5">
+        <item>Machine Learning</item>
+        <item>Applied Machine Learning</item>
+        <item>Python Programming</item>
+        <item>Statistical Programming</item>
+        <item>Tensorflow</item>
+        <item>DevOps</item>
+        <item>Devops Tools</item>
+        <item>Exploratory Data Analysis</item>
+        <item>Feature Engineering</item>
+        <item>Machine Learning Software</item>
+        <item>Probability &amp; Statistics</item>
+        <item>Cloud Computing</item>
+        <item>Deep Learning</item>
+        <item>Google Cloud Platform</item>
+        <item>Other Cloud Platforms and Tools</item>
+        <item>Performance Management"," Kubernetes</item>
+        <item>Leadership and Management</item>
+    </string-array>
+
+    <string-array name="child_data_6">
+        <item>Communication</item>
+        <item>Computer Programming</item>
+        <item>Data Analysis</item>
+        <item>Exploratory Data Analysis</item>
+        <item>General Statistics</item>
+        <item>Machine Learning</item>
+        <item>Planning</item>
+        <item>Probability Distribution</item>
+        <item>Project Management</item>
+        <item>Python Programming</item>
+        <item>Regression</item>
+        <item>Statistical Analysis</item>
+        <item>Tableau Software</item>
+    </string-array>
+
+    <string-array name="child_data_7">
+        <item>Communication</item>
+        <item>CData Analysis</item>
+        <item>Planning</item>
+        <item>Project Management</item>
+    </string-array>
+
+    <string-array name="child_data_8">
+        <item>Machine Learning</item>
+        <item>Python Programming</item>
+        <item>Statistical Programming</item>
+        <item>Data Management</item>
+        <item>Machine Learning Algorithms</item>
+        <item>Deep Learning</item>
+        <item>Process Analysis</item>
+        <item>Data Analysis</item>
+        <item>Apache</item>
+        <item>Human Learning</item>
+        <item>Machine Learning Software</item>
+        <item>Applied Machine Learning</item>
+        <item>Extract</item>
+        <item>Transform</item>
+        <item>Load</item>
+        <item>Artificial Neural Networks</item>
+        <item>Feature Engineering</item>
+        <item>Application Development</item>
+        <item>Probability &amp; Statistics</item>
+        <item>Cloud Computing</item>
+        <item>Statistical Machine Learning</item>
+        <item>General Statistics</item>
+        <item>IBM Cloud</item>
+        <item>SQL</item>
+        <item>Computer Programming</item>
+        <item>Tensorflow</item>
+    </string-array>
+
+    <string-array name="child_data_9">
+        <item>Finance</item>
+        <item>Mergers &amp; Acquisitions</item>
+        <item>Business Analysis</item>
+        <item>Data Analysis</item>
+        <item>Financial Analysis</item>
+        <item>Investment Management</item>
+        <item>Accounting</item>
+        <item>Entrepreneurship</item>
+        <item>Marketing</item>
+        <item>Strategy</item>
+        <item>Strategy and Operations</item>
+        <item>Game Theory</item>
+    </string-array>
+
+    <string-array name="child_data_10">
+        <item>Data Warehousing</item>
+        <item>Data Management</item>
+        <item>Databases</item>
+        <item>Database Design</item>
+        <item>Business Intelligence</item>
+        <item>Data Model</item>
+        <item>Database Administration</item>
+        <item>Business Analysis</item>
+        <item>SQL</item>
+        <item>Data Analysis</item>
+        <item>Data Architecture</item>
+        <item>Warehouse Management</item>
+        <item>Data Visualization</item>
+        <item>Leadership and Management</item>
+        <item>Systems Design</item>
+        <item>Database Application</item>
+        <item>Extract</item>
+        <item>Transform</item>
+        <item>Load</item>
+        <item>Critical Thinking</item>
+        <item>Performance Management</item>
+        <item>Marketing Design</item>
+    </string-array>
+
+    
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>

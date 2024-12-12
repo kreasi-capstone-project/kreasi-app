@@ -77,15 +77,16 @@ class LoginActivity : AppCompatActivity() {
             setTitle(title)
             setMessage(message)
             if (isSuccess) {
-                setPositiveButton(getString(R.string.continue_text)) { _, _ ->
+                setPositiveButton(getString(R.string.continue_text)) { dialog, _ ->
+                    dialog.dismiss()
                     val intent = Intent(context, MainActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                     startActivity(intent)
                     finish()
                 }
             } else {
-                setPositiveButton(getString(R.string.try_again)) { _, _, ->
-                    //do nothing
+                setPositiveButton(getString(R.string.try_again)) { dialog, _, ->
+                    dialog.dismiss()
                 }
             }
 

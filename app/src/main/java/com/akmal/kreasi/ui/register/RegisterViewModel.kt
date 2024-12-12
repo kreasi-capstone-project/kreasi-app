@@ -5,8 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.akmal.kreasi.data.UserRepository
-import com.akmal.kreasi.data.pref.UserModel
 import com.akmal.kreasi.data.response.RegisterRequest
 import com.akmal.kreasi.data.retrofit.ApiService
 import com.akmal.kreasi.helper.ApiErrorHandler

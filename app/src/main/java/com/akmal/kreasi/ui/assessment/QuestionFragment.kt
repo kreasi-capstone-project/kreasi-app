@@ -1,6 +1,7 @@
 package com.akmal.kreasi.ui.assessment
 
-import android.app.AlertDialog
+import androidx.appcompat.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -13,6 +14,7 @@ import com.akmal.kreasi.R
 import com.akmal.kreasi.ViewModelFactory
 import com.akmal.kreasi.data.question.Question
 import com.akmal.kreasi.databinding.FragmentQuestionBinding
+import com.akmal.kreasi.ui.result.TestResult
 
 class QuestionFragment : Fragment() {
     private var _binding: FragmentQuestionBinding? = null
@@ -89,7 +91,6 @@ class QuestionFragment : Fragment() {
                     displayQuestion(questions[viewModel.currentQuestionIndex])
                     updateNavigationButtons(questions.size)
                 }
-
             }
         }
     }
@@ -148,6 +149,7 @@ class QuestionFragment : Fragment() {
             setMessage("Are you sure you want to finish the test? Once completed, you cannot go back.")
             setPositiveButton("Yes, Finish") {dialog, _, ->
                 dialog.dismiss()
+                startActivity(Intent(requireContext(), TestResult::class.java))
                 requireActivity().finish()
             }
             setNegativeButton("Cancel") {dialog, _ ->
