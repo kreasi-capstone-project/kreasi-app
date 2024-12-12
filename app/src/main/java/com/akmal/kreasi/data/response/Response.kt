@@ -88,7 +88,7 @@ data class Subjects(
 
 data class Subject(
     @field:SerializedName("id")
-    val id: Int? = null,
+    val id: Int?,
 
     @field:SerializedName("name")
     val name: String,
@@ -123,7 +123,7 @@ data class AssessmentData(
     @field:SerializedName("subjects")
     val subjects: Subject,
 
-    @field:SerializedName("assessments")
+    @field:SerializedName("assesments")
     val assessments: Map<String, AssessmentDetail>
 )
 

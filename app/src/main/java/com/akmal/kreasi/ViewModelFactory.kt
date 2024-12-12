@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.akmal.kreasi.data.UserRepository
 import com.akmal.kreasi.data.di.Injection
 import com.akmal.kreasi.data.retrofit.ApiService
+import com.akmal.kreasi.ui.assessment.QuestionViewModel
 import com.akmal.kreasi.ui.home.HomeViewModel
 import com.akmal.kreasi.ui.login.LoginViewModel
 import com.akmal.kreasi.ui.register.RegisterViewModel
@@ -32,9 +33,9 @@ class ViewModelFactory(private val repository: UserRepository, private val apiSe
             modelClass.isAssignableFrom(StudyPathViewModel::class.java) -> {
                 StudyPathViewModel(repository, apiService) as T
             }
-//            modelClass.isAssignableFrom(AddStoryViewModel::class.java) -> {
-//                AddStoryViewModel(apiService, repository) as T
-//            }
+            modelClass.isAssignableFrom(QuestionViewModel::class.java) -> {
+                QuestionViewModel(repository, apiService) as T
+            }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }

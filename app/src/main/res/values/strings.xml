@@ -39,20 +39,6 @@
     </string-array>
 
 
-    <integer-array name="data_photo">
-        <item>@drawable/atom</item>
-        <item>@drawable/business</item>
-        <item>@drawable/management</item>
-        <item>@drawable/modelling</item>
-        <item>@drawable/product</item>
-        <item>@drawable/python</item>
-        <item>@drawable/regression</item>
-        <item>@drawable/artificial_intelligence</item>
-        <item>@drawable/financial_analysis</item>
-        <item>@drawable/information_technology</item>
-    </integer-array>
-
-
     <string-array name="data_date">
         <item>2024-12-12</item>
         <item>2024-11-12</item>
@@ -127,5 +113,6 @@
     <string name="register_failed">Register Failed</string>
     <string name="email_blank_message">Email Cannot Be Blank</string>
     <string name="email_format_message">Incorrect email format</string>
+    <string name="action_take_the_test">Take the Test</string>
 
 </resources>
