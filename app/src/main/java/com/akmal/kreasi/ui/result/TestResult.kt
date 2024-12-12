@@ -14,6 +14,7 @@ class TestResult : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTestResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.title = "Recommendation Learning"
 
         val data = loadExpandableListData()
 
