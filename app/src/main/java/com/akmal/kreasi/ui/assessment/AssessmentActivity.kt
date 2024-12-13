@@ -46,9 +46,12 @@ class AssessmentActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
         val studyId = intent.getIntExtra("LEARNING_ID", 0)
+        val nameLearning = intent.getStringExtra("NAME_LEARNING")
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .add(R.id.frame_container, QuestionFragment.newInstance(studyId))
+                .add(R.id.frame_container, QuestionFragment.newInstance(studyId,
+                    nameLearning.toString()
+                ))
                 .commit()
         }
     }

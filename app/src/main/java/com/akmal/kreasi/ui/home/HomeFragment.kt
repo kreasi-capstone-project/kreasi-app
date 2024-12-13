@@ -88,6 +88,7 @@ class HomeFragment : Fragment(), LearningPathAdapter.OnItemClickListener {
     override fun onItemClick(data: Subject) {
         val intent = Intent(requireContext(), StudyPathDetail::class.java)
         intent.putExtra("LEARNING_ID", data.id)
+        intent.putExtra("NAME_LEARNING", data.name)
         startActivity(intent)
     }
 }

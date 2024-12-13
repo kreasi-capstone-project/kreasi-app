@@ -6,6 +6,7 @@ import com.akmal.kreasi.data.pref.UserPreference
 import com.akmal.kreasi.data.pref.dataStore
 import com.akmal.kreasi.data.retrofit.ApiConfig
 import com.akmal.kreasi.data.retrofit.ApiService
+import com.akmal.kreasi.data.retrofit.ApiServiceRecommendation
 
 object Injection {
     fun provideRepository(context: Context): UserRepository {
@@ -18,6 +19,14 @@ object Injection {
             ApiConfig.getApiService()
         } else {
             ApiConfig.getApiService(token)
+        }
+    }
+
+    fun provideApiServiceRecommendation(token: String? = null): ApiServiceRecommendation {
+        return if (token.isNullOrEmpty()) {
+            ApiConfig.getApiServiceRecommedation()
+        } else {
+            ApiConfig.getApiServiceRecommedation(token)
         }
     }
 }

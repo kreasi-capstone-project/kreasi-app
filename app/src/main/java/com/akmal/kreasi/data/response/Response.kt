@@ -1,6 +1,8 @@
 package com.akmal.kreasi.data.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 
 data class RegisterRequest(
@@ -134,6 +136,21 @@ data class AssessmentDetail(
     @field:SerializedName("correct_answers")
     val correctAnswers: String
 )
+
+@Parcelize
+data class PostRequest(
+    @field:SerializedName("score")
+    val score: Int,
+
+    @field:SerializedName("skill")
+    val skill: String
+): Parcelable
+
+@Parcelize
+data class PostResponse(
+    val predictedCourses: List<String>?,
+    val userLevel: String?
+): Parcelable
 
 
 data class ApiErrorResponse(

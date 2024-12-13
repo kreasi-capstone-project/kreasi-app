@@ -46,6 +46,7 @@ class StudyPathDetail : AppCompatActivity() {
         }
 
         val studyId = intent.getIntExtra("LEARNING_ID", 0)
+        val nameStudy = intent.getStringExtra("NAME_LEARNING")
         if (studyId != 0) {
             viewModel.getStudyDetail(studyId)
         }
@@ -68,6 +69,7 @@ class StudyPathDetail : AppCompatActivity() {
         binding?.btnTakeTest?.setOnClickListener {
             val intent = Intent(this, AssessmentActivity::class.java)
             intent.putExtra("LEARNING_ID", studyId)
+            intent.putExtra("NAME_LEARNING", nameStudy)
             startActivity(intent)
         }
     }

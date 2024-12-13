@@ -15,12 +15,17 @@ import com.akmal.kreasi.ViewModelFactory
 import com.akmal.kreasi.data.question.Question
 import com.akmal.kreasi.databinding.FragmentQuestionBinding
 import com.akmal.kreasi.ui.result.TestResult
+import kotlin.math.log
 
 class QuestionFragment : Fragment() {
     private var _binding: FragmentQuestionBinding? = null
     private val binding get() = _binding!!
 
     private val viewModel: QuestionViewModel by activityViewModels {
+        ViewModelFactory.getInstance(requireContext())
+    }
+
+    private val viewModelRecommend: QuestionPostViewModel by activityViewModels {
         ViewModelFactory.getInstance(requireContext())
     }
 
@@ -149,8 +154,27 @@ class QuestionFragment : Fragment() {
             setMessage("Are you sure you want to finish the test? Once completed, you cannot go back.")
             setPositiveButton("Yes, Finish") {dialog, _, ->
                 dialog.dismiss()
-                startActivity(Intent(requireContext(), TestResult::class.java))
-                requireActivity().finish()
+                val nameStudy = arguments?.getString("NAME_LEARNING")
+                Log.d("nameStudy", "cek namestudy $nameStudy")
+                val correctAnswers = calculateCorrectAnswers()
+                Log.d("correnctAnswer", "cek correctAnswers $correctAnswers")
+
+                if (nameStudy != null) {
+                    viewModelRecommend.submitTestResult(correctAnswers, nameStudy)
+                }
+
+                viewModelRecommend.postResponse.observe(viewLifecycleOwner) {result ->
+                    result.onSuccess { recommendation ->
+                        val intent = Intent(requireContext(), TestResult::class.java)
+                        intent.putExtra("RECOMMENDATION_DATA", recommendation)
+                        startActivity(intent)
+                        requireActivity().finish()
+                    }
+                    result.onFailure { error ->
+                        Toast.makeText(requireContext(), error.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+
             }
             setNegativeButton("Cancel") {dialog, _ ->
                 dialog.dismiss()
@@ -167,6 +191,13 @@ class QuestionFragment : Fragment() {
         }
     }
 
+    private fun calculateCorrectAnswers(): Int {
+        return viewModel.question.value?.getOrNull()?.count { question ->
+            val userAnswer = viewModel.userAnswers[question.correctAnswerIndex]
+            question.correctAnswerIndex == userAnswer
+        } ?: 0
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -174,9 +205,10 @@ class QuestionFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance(subjectId: Int) = QuestionFragment().apply {
+        fun newInstance(subjectId: Int, nameStudy: String) = QuestionFragment().apply {
             arguments = Bundle().apply {
                 putInt("LEARNING_ID", subjectId)
+                putString("NAME_LEARNING", nameStudy)
             }
         }
     }

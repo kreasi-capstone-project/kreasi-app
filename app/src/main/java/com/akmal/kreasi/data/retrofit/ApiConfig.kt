@@ -32,4 +32,31 @@ object ApiConfig {
             .build()
         return retrofit.create(ApiService::class.java)
     }
+
+    fun getApiServiceRecommedation(token: String? = null): ApiServiceRecommendation {
+        val loggingInterceptor = if(BuildConfig.DEBUG) { HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY) }else { HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE) }
+
+        val clientBuilder = OkHttpClient.Builder()
+            .addInterceptor(loggingInterceptor)
+
+        if (!token.isNullOrEmpty()) {
+            val authInterceptor = Interceptor { chain ->
+                val req = chain.request()
+                val requestHeaders = req.newBuilder()
+                    .addHeader("Authorization", "Bearer $token")
+                    .build()
+                chain.proceed(requestHeaders)
+            }
+            clientBuilder.addInterceptor(authInterceptor)
+        }
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://flask-ml-api-606551632376.asia-southeast2.run.app/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(clientBuilder.build())
+            .build()
+        return retrofit.create(ApiServiceRecommendation::class.java)
+    }
+
+
 }

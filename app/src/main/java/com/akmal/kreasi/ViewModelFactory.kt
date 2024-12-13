@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.akmal.kreasi.data.UserRepository
 import com.akmal.kreasi.data.di.Injection
 import com.akmal.kreasi.data.retrofit.ApiService
+import com.akmal.kreasi.data.retrofit.ApiServiceRecommendation
+import com.akmal.kreasi.ui.assessment.QuestionPostViewModel
 import com.akmal.kreasi.ui.assessment.QuestionViewModel
 import com.akmal.kreasi.ui.home.HomeViewModel
 import com.akmal.kreasi.ui.login.LoginViewModel
@@ -13,7 +15,7 @@ import com.akmal.kreasi.ui.register.RegisterViewModel
 import com.akmal.kreasi.ui.setting.SettingViewModel
 import com.akmal.kreasi.ui.studydetail.StudyPathViewModel
 
-class ViewModelFactory(private val repository: UserRepository, private val apiService: ApiService) : ViewModelProvider.NewInstanceFactory() {
+class ViewModelFactory(private val repository: UserRepository, private val apiService: ApiService, private val apiServiceRecommendation: ApiServiceRecommendation) : ViewModelProvider.NewInstanceFactory() {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -36,6 +38,9 @@ class ViewModelFactory(private val repository: UserRepository, private val apiSe
             modelClass.isAssignableFrom(QuestionViewModel::class.java) -> {
                 QuestionViewModel(repository, apiService) as T
             }
+            modelClass.isAssignableFrom(QuestionPostViewModel::class.java) -> {
+                QuestionPostViewModel(apiServiceRecommendation) as T
+            }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }
@@ -49,7 +54,8 @@ class ViewModelFactory(private val repository: UserRepository, private val apiSe
                 synchronized(ViewModelFactory::class.java) {
                     val repository = Injection.provideRepository(context)
                     val apiService = Injection.provideApiService(token)
-                    INSTANCE = ViewModelFactory(repository, apiService)
+                    val apiServiceRecommendation = Injection.provideApiServiceRecommendation(token)
+                    INSTANCE = ViewModelFactory(repository, apiService, apiServiceRecommendation)
                 }
             }
             return INSTANCE as ViewModelFactory
