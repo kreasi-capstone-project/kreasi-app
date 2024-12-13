@@ -165,12 +165,14 @@ class QuestionFragment : Fragment() {
 
                 viewModelRecommend.postResponse.observe(viewLifecycleOwner) {result ->
                     result.onSuccess { recommendation ->
+                        Log.d("rec", "recomendation $recommendation")
                         val intent = Intent(requireContext(), TestResult::class.java)
                         intent.putExtra("RECOMMENDATION_DATA", recommendation)
                         startActivity(intent)
                         requireActivity().finish()
                     }
                     result.onFailure { error ->
+                        Log.d("error", "error $error")
                         Toast.makeText(requireContext(), error.message, Toast.LENGTH_SHORT).show()
                     }
                 }

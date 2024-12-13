@@ -19,7 +19,7 @@ class TestResult : AppCompatActivity() {
 
         // Retrieve data from intent
         val recommendation = intent.getParcelableExtra<PostResponse>("RECOMMENDATION_DATA")
-        if (recommendation != null && recommendation.predictedCourses != null) {
+        if (recommendation?.predictedCourses != null) {
             setupExpandableListView(recommendation)
         } else {
             Toast.makeText(this, "Recommendation data is unavailable", Toast.LENGTH_SHORT).show()
@@ -40,7 +40,7 @@ class TestResult : AppCompatActivity() {
         val adapter = RecommendationLearningAdapter(this, titles, data)
         binding.expandableListView.setAdapter(adapter)
 
-        // Optional: Add ExpandableListView event listeners (if needed)
+
         binding.expandableListView.setOnGroupExpandListener { groupPosition ->
             Toast.makeText(this, "${titles[groupPosition]} List Expanded.", Toast.LENGTH_SHORT).show()
         }

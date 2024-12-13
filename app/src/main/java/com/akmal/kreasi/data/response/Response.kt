@@ -148,7 +148,10 @@ data class PostRequest(
 
 @Parcelize
 data class PostResponse(
+    @field:SerializedName("predicted_courses")
     val predictedCourses: List<String>?,
+
+    @field:SerializedName("user_level")
     val userLevel: String?
 ): Parcelable
 
